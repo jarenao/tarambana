@@ -1,0 +1,23 @@
+{
+  "home": {
+    "title": "Welcome to the home page",
+    "changeLanguage": "Change language"
+  },
+  "about": {
+    "title": "About us",
+    "description": "This is a sample application created with Vue 3 and Vite."
+  },
+  "prueba": {
+    "title": "testing",
+    "description": "Test, ou yeah!"
+  },
+  "paco": {
+    "title": "html con tailwind",
+    "description": "CosasasW"
+  },
+  "counter": {
+    "title": "Counter",
+    "increment": "Increment",
+    "decrement": "Decrement"
+  }
+}

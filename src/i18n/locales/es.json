@@ -1,0 +1,23 @@
+{
+  "home": {
+    "title": "Bienvenido",
+    "changeLanguage": "Cambiar idioma"
+  },
+  "about": {
+    "title": "Acerca de nosotros",
+    "description": "Esta es una aplicación de ejemplo creada con Vue 3 y Vite."
+  },
+  "prueba": {
+    "title": "Prueba",
+    "description": "Prueba, a ver qué tal"
+  },
+  "paco": {
+    "title": "html con tailwind",
+    "description": "CosasasW"
+  },
+  "counter": {
+    "title": "Contador",
+    "increment": "Incrementar",
+    "decrement": "Decrementar"
+  }
+}
