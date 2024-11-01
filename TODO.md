@@ -9,7 +9,7 @@
 
 ### TESTS
 
-- :bug: Test iniciales actualizarlos
+- Test iniciales actualizarlos
 
 ### 🎯 DEPENDENCIAS
 
