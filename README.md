@@ -70,7 +70,3 @@ Ejecuta `npm run test:unit` para las pruebas unitarias y `npm run test:e2e` para
 ## Contribuir
 
 Las contribuciones son bienvenidas. Por favor, asegúrate de actualizar las pruebas según sea necesario.
-
-## Licencia
-
-[MIT](https://choosealicense.com/licenses/mit/)
