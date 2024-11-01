@@ -1,5 +1,4 @@
 <script setup>
-import { watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useLanguageStore } from '../store/changeLanguage'
 
@@ -9,17 +8,12 @@ import Counter from '../components/Counter.vue'
 const { t, locale } = useI18n()
 const languageStore = useLanguageStore()
 
+// Función para cambiar el idioma
 const toggleLanguage = () => {
-  languageStore.toggleLanguage()
+  const newLocale = languageStore.currentLocale === 'es' ? 'en' : 'es'
+  languageStore.setLanguage(newLocale)
+  locale.value = newLocale
 }
-
-// Sincroniza el idioma del store con vue-i18n
-watch(
-  () => languageStore.currentLocale,
-  (newLocale) => {
-    locale.value = newLocale
-  }
-)
 </script>
 
 <template>
