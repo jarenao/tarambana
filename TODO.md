@@ -9,13 +9,13 @@
 
 ### TESTS
 
-- Test iniciales actualizarlos
+- :bug: Test iniciales actualizarlos
 
-### DEPENDENCIAS
+### 🎯 DEPENDENCIAS
 
 - StoryBook, para probarlo y conocer la biblioteca de componentes.
 
-### IDEAS
+### 💡 IDEAS
 
 - EL proyecto consiste en una página principal donde se muestran los contenidos (SPA) con posibilidad de algunas vistas específicas para mostrar otros apartados.
 - Área privada a la cual se accede con un icono que redirije a Auth0. Este redirige a una zona de carga de imágenes con cloudinary, esto nutrirá la galería de imágenes para mantenerla actual.
