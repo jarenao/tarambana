@@ -7,6 +7,10 @@
     "title": "Acerca de nosotros",
     "description": "Esta es una aplicación de ejemplo creada con Vue 3 y Vite."
   },
+  "gallery": {
+    "title": "Galería",
+    "description": "Galería de imágenes"
+  },
   "prueba": {
     "title": "Prueba",
     "description": "Prueba, a ver qué tal"

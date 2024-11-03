@@ -7,6 +7,10 @@
     "title": "About us",
     "description": "This is a sample application created with Vue 3 and Vite."
   },
+  "gallery": {
+    "title": "Gallery",
+    "description": "Image gallery"
+  },
   "prueba": {
     "title": "testing",
     "description": "Test, ou yeah!"
