@@ -10,14 +10,14 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#1D4ED8', // Color principal
-          light: '#3B82F6', // Versión más clara
-          dark: '#1E40AF' // Versión más oscura
+          DEFAULT: '#000',
+          light: '#6d6d6d',
+          dark: '#4f4f4f'
         },
         secondary: {
-          DEFAULT: '#D97706', // Color secundario
-          light: '#F59E0B', // Versión más clara
-          dark: '#B45309' // Versión más oscura
+          DEFAULT: '#ca8a04',
+          light: '#eaa108',
+          dark: '#a16f07'
         }
       }
     }
