@@ -1,7 +1,11 @@
 <script setup>
+import Login from '@/components/ui/Login.vue'
+
 import { useI18n } from 'vue-i18n'
 import { useLanguageStore } from '@/store/changeLanguage'
 import { useRoute } from 'vue-router'
+
+import { useAuth0 } from '@auth0/auth0-vue'
 
 const { t, locale } = useI18n()
 const languageStore = useLanguageStore()
@@ -15,6 +19,8 @@ const toggleLanguage = () => {
   languageStore.setLanguage(newLocale)
   locale.value = newLocale
 }
+
+const { isAuthenticated } = useAuth0()
 </script>
 
 <template>
@@ -46,6 +52,14 @@ const toggleLanguage = () => {
             >{{ t('gallery.title') }}</router-link
           >
         </li>
+        <li v-if="isAuthenticated">
+          <router-link
+            to="/private"
+            :class="isActive('/private') ? 'text-secondary' : 'text-primary-light'"
+            class="hover:text-secondary"
+            >{{ t('private.title') }}</router-link
+          >
+        </li>
       </ul>
     </aside>
 
@@ -57,18 +71,14 @@ const toggleLanguage = () => {
       <a href="#" class="hover:text-gray-600">
         <img src="@/assets/icons/instagram.svg" alt="Instagram icon" />
       </a>
-      <a href="#" class="hover:text-gray-600">
-        <img src="@/assets/icons/lock.svg" alt="lock icon" />
-      </a>
-      <a href="#" class="hover:text-gray-600">
-        <img src="@/assets/icons/unlock.svg" alt="unlock icon" />
-      </a>
+
+      <Login />
+
+      <!-- Botón para cambiar el idioma -->
       <a href="#" class="hover:text-gray-600 w-6" @click="toggleLanguage">
         <img v-if="locale === 'es'" src="@/assets/icons/language-es.svg" alt="language-es icon" />
         <img v-else src="@/assets/icons/language-en.svg" alt="language-en icon" />
       </a>
-
-      <!-- Otros enlaces del menú -->
     </nav>
 
     <div id="nav-trigger" class="md:hidden">

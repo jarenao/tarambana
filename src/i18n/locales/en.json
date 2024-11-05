@@ -11,6 +11,10 @@
     "title": "Gallery",
     "description": "Image gallery"
   },
+  "private": {
+    "title": "Private",
+    "description": "Private area"
+  },
   "prueba": {
     "title": "testing",
     "description": "Test, ou yeah!"
