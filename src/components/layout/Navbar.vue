@@ -1,89 +1,44 @@
 <script setup>
-import Login from '@/components/ui/Login.vue'
-
-import { useI18n } from 'vue-i18n'
-import { useLanguageStore } from '@/store/changeLanguage'
-import { useRoute } from 'vue-router'
-
-import { useAuth0 } from '@auth0/auth0-vue'
-
-const { t, locale } = useI18n()
-const languageStore = useLanguageStore()
-
-const route = useRoute()
-const isActive = (path) => route.path === path
-
-// Función para cambiar el idioma
-const toggleLanguage = () => {
-  const newLocale = languageStore.currentLocale === 'es' ? 'en' : 'es'
-  languageStore.setLanguage(newLocale)
-  locale.value = newLocale
-}
-
-const { isAuthenticated } = useAuth0()
+import Login from '@/components/common/Login.vue'
+import ChangeLanguage from '../common/ChangeLanguage.vue'
+import BurguerMenu from '../common/BurguerMenu.vue'
+import Aside from './Aside.vue'
+import Sidebar from './Sidebar.vue'
 </script>
 
 <template>
-  <nav id="navbar" class="flex justify-between items-center h-16">
-    <div id="logo" class="flex items-center">
-      <!-- Logo en el banner -->
+  <nav
+    class="justify-between items-center h-16 fixed flex md:relative bg-white md:bg-inherit w-full top-0 left-0 px-6 md:p-0 shadow-sm md:shadow-none"
+  >
+    <!-- Logo -->
+    <div class="flex items-center">
       <router-link to="/" class="text-gray-700 hover:text-yellow-500">
         <img src="/images/logo.png" alt="Landing Page" class="h-8 mr-4" />
       </router-link>
-      <!-- Logo en la barra de navegación -->
-      <!-- <img src="/images/logo-2.png" alt="Landing Page" class="hidden md:inline-block h-8" /> -->
     </div>
 
-    <aside>
-      <ul class="flex space-x-4 text-gray-500">
-        <li>
-          <router-link
-            to="/about"
-            :class="isActive('/about') ? 'text-secondary' : 'text-primary-light'"
-            class="hover:text-secondary"
-            >{{ t('about.title') }}</router-link
-          >
-        </li>
-        <li>
-          <router-link
-            to="/gallery"
-            :class="isActive('/gallery') ? 'text-secondary' : 'text-primary-light'"
-            class="hover:text-secondary"
-            >{{ t('gallery.title') }}</router-link
-          >
-        </li>
-        <li v-if="isAuthenticated">
-          <router-link
-            to="/private"
-            :class="isActive('/private') ? 'text-secondary' : 'text-primary-light'"
-            class="hover:text-secondary"
-            >{{ t('private.title') }}</router-link
-          >
-        </li>
-      </ul>
-    </aside>
+    <!-- Main navigation -->
+    <Aside />
 
-    <!-- Navegación principal -->
-    <nav id="nav-main" class="hidden md:flex space-x-4 text-sm">
-      <a href="#" class="hover:text-gray-600">
+    <!-- Icons  -->
+    <nav class="hidden md:flex space-x-4 text-sm">
+      <a href="#" class="hover:text-gray-600" aria-label="Facebook Icon">
         <img src="@/assets/icons/facebook.svg" alt="Facebook icon" />
       </a>
-      <a href="#" class="hover:text-gray-600">
+      <a href="#" class="hover:text-gray-600" aria-label="Instagram Icon">
         <img src="@/assets/icons/instagram.svg" alt="Instagram icon" />
       </a>
 
+      <!-- Login -->
       <Login />
 
-      <!-- Botón para cambiar el idioma -->
-      <a href="#" class="hover:text-gray-600 w-6" @click="toggleLanguage">
-        <img v-if="locale === 'es'" src="@/assets/icons/language-es.svg" alt="language-es icon" />
-        <img v-else src="@/assets/icons/language-en.svg" alt="language-en icon" />
-      </a>
+      <!-- Change language -->
+      <ChangeLanguage />
     </nav>
 
-    <div id="nav-trigger" class="md:hidden">
-      <!-- Icono de hamburguesa o botón para menú móvil -->
-    </div>
+    <!-- Menu Mobile -->
+    <BurguerMenu />
+    <Sidebar />
   </nav>
 </template>
 

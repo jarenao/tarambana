@@ -1,7 +1,7 @@
 <template>
   <header
     id="banner"
-    class="bg-cover bg-center bg-no-repeat flex flex-col px-6 pt-2"
+    class="bg-cover bg-center bg-no-repeat flex flex-col px-6 pt-2 relative z-10"
     style="background-image: url('/images/banner-images/banner-image-1.jpg')"
   >
     <!-- Contenido del Navbar -->
