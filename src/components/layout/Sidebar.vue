@@ -1,40 +1,21 @@
-<template>
-  <div class="grid min-h-screen hidden fixed top-0 left-0 w-full backdrop-blur-sm bg-black/70 z-10">
-    <div class="bg-white shadow-lg rounded-xl max-w-xs ml-auto relative">
-      <header
-        class="bg-gradient-to-r from-indigo-500 to-indigo-600 transform flex items-center mb-10 py-8 px-6"
-      >
-        <img
-          class="rounded-full w-20 h-20 ring-4 ring-opacity-20 ring-gray-200"
-          src="https://randomuser.me/api/portraits/women/79.jpg"
-          alt="Dr. Jessica James"
-        />
-        <div class="ml-5">
-          <h1 class="text-white tracking-wide text-lg">Dr. Jessica James</h1>
-          <p class="text-gray-300 tracking-wider text-sm">Dermathologist</p>
-        </div>
-      </header>
-      <button
-        class="text-white capitalize text-sm bg-gradient-to-r from-indigo-500 to-indigo-600 inline-block rounded-md flex items-center py-2 pl-3 pr-4 shadow-md mx-auto tracking-wider mb-5"
-      >
-        <svg
-          class="w-6 h-6 mr-2"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-          ></path>
-        </svg>
-        add branch
-      </button>
+<script setup>
+import { useMenuStore } from '@/store/useMenuStore'
+const menuStore = useMenuStore()
+</script>
 
-      <ul class="px-8 relative pb-5">
+<template>
+  <div
+    class="grid min-h-screen fixed top-16 left-0 w-full backdrop-blur-sm z-10 transform duration-300 ease-in-out"
+    :class="{
+      'backdrop-blur-sm bg-black/70': menuStore.isActive,
+      'backdrop-blur-none bg-black/0': !menuStore.isActive
+    }"
+  >
+    <div
+      class="bg-white shadow-lg max-w-xs ml-auto relative border-t-2 border-primary transform transition-transform duration-300 ease-in-out"
+      :class="{ 'translate-x-0': menuStore.isActive, 'translate-x-full': !menuStore.isActive }"
+    >
+      <ul class="px-5 relative pb-5">
         <li class="flex items-center text-gray-900 text-md py-4">
           <span class="text-gray-400 mr-5"
             ><svg
@@ -126,26 +107,9 @@
           ></span>
           Library
         </li>
-        <span class="absolute text-gray-400 right-5 bottom-5"
-          ><svg
-            class="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            ></path></svg
-        ></span>
       </ul>
     </div>
   </div>
 </template>
-
-<script setup></script>
 
 <style lang="scss" scoped></style>
