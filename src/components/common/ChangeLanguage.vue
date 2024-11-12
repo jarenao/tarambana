@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { useLanguageStore } from '@/store/changeLanguage'
+import { useLanguageStore } from '@/store/useLanguageStore'
 import { useI18n } from 'vue-i18n'
 
 const { locale } = useI18n()
