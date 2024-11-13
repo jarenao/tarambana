@@ -8,7 +8,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <Navbar class="px-6 mt-2"></Navbar>
+  <Navbar></Navbar>
   <div>
     <h1>ESTO ES UNA AREA PRIVADA</h1>
   </div>

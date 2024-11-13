@@ -14,7 +14,7 @@ function closeMenu(event) {
 
 <template>
   <div
-    class="js-sidebar grid min-h-screen fixed top-16 left-0 w-full backdrop-blur-sm z-10 transform duration-300 ease-in-out md:hidden"
+    class="js-sidebar grid min-h-screen fixed top-16 left-0 w-full z-10 transform duration-300 ease-in-out md:hidden"
     :class="{
       'backdrop-blur-sm bg-black/70': isActive,
       'backdrop-blur-0 bg-black/0': !isActive
@@ -62,12 +62,12 @@ function closeMenu(event) {
           ></span>
           Post sessions
         </li>
-        <div class="bg-indigo-600 w-1 h-14 absolute left-0" style="bottom: 8.235rem"></div>
-        <li class="flex items-center text-gray-900 text-md py-4 text-indigo-600">
-          <span class="text-gray-400 mr-5"
+        <div class="bg-secondary w-1 h-14 absolute left-0"></div>
+        <li class="flex items-center text-md py-4 text-secondary">
+          <span class="text-secondary mr-5"
             ><svg
-              class="w-6 h-6 text-indigo-600"
-              fill="#5046e5"
+              class="w-6 h-6"
+              fill="currentColor"
               stroke="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"

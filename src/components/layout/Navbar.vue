@@ -8,7 +8,7 @@ import Sidebar from './Sidebar.vue'
 
 <template>
   <nav
-    class="justify-between items-center h-16 fixed flex md:relative bg-white md:bg-inherit w-full top-0 left-0 px-6 md:p-0 shadow-sm md:shadow-none"
+    class="justify-between items-center h-16 fixed flex md:relative bg-white md:bg-inherit w-full top-0 left-0 px-6 shadow-sm md:shadow-none"
   >
     <!-- Logo -->
     <div class="flex items-center">

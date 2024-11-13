@@ -1,5 +1,5 @@
 <template>
-  <div id="banner-content" class="flex flex-col items-center py-20">
+  <div id="banner-content" class="flex flex-col items-center py-20 px-6">
     <div class="text-center max-w-md">
       <h1 class="text-5xl font-bold">A FREE AND SIMPLE LANDING PAGE</h1>
       <h2 class="text-xl font-light mt-4">

@@ -8,6 +8,6 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <Navbar class="px-6 mt-2"></Navbar>
+  <Navbar></Navbar>
   <Footer></Footer>
 </template>
