@@ -1,15 +1,25 @@
 <script setup>
 import { useMenuStore } from '@/store/useMenuStore'
+import { storeToRefs } from 'pinia'
+
 const menuStore = useMenuStore()
+const { isActive } = storeToRefs(menuStore)
+
+function closeMenu(event) {
+  if (event.target.classList.contains('js-sidebar') && isActive.value) {
+    isActive.value = false
+  }
+}
 </script>
 
 <template>
   <div
-    class="grid min-h-screen fixed top-16 left-0 w-full backdrop-blur-sm z-10 transform duration-300 ease-in-out"
+    class="js-sidebar grid min-h-screen fixed top-16 left-0 w-full backdrop-blur-sm z-10 transform duration-300 ease-in-out md:hidden"
     :class="{
-      'backdrop-blur-sm bg-black/70': menuStore.isActive,
-      'backdrop-blur-none bg-black/0': !menuStore.isActive
+      'backdrop-blur-sm bg-black/70': isActive,
+      'backdrop-blur-0 bg-black/0': !isActive
     }"
+    @click="isActive && closeMenu($event)"
   >
     <div
       class="bg-white shadow-lg max-w-xs ml-auto relative border-t-2 border-primary transform transition-transform duration-300 ease-in-out"
