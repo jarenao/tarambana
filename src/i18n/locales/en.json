@@ -15,17 +15,21 @@
     "title": "Private",
     "description": "Private area"
   },
-  "prueba": {
-    "title": "testing",
-    "description": "Test, ou yeah!"
-  },
-  "paco": {
-    "title": "html con tailwind",
-    "description": "CosasasW"
-  },
   "counter": {
     "title": "Counter",
     "increment": "Increment",
     "decrement": "Decrement"
+  },
+  "login": {
+    "title": "Login",
+    "description": "Login"
+  },
+  "logout": {
+    "title": "Logout",
+    "description": "Logout"
+  },
+  "changeLanguage": {
+    "title": "Change language",
+    "description": "Change language"
   }
 }

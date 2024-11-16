@@ -1,4 +1,8 @@
 <script setup>
+import SocialMenu from '../common/SocialMenu.vue'
+import Login from '../common/Login.vue'
+import ChangeLanguage from '../common/ChangeLanguage.vue'
+
 import { useMenuStore } from '@/store/useMenuStore'
 import { storeToRefs } from 'pinia'
 import { useI18n } from 'vue-i18n'
@@ -93,6 +97,15 @@ function closePanel() {
             </router-link>
           </li>
         </template>
+        <li class="flex items-center py-4">
+          <ChangeLanguage />
+        </li>
+        <li class="flex items-center py-4">
+          <Login />
+        </li>
+        <li class="flex justify-between items-center pt-10">
+          <SocialMenu />
+        </li>
       </ul>
     </div>
   </div>

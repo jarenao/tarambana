@@ -15,17 +15,21 @@
     "title": "Privado",
     "description": "Área privada"
   },
-  "prueba": {
-    "title": "Prueba",
-    "description": "Prueba, a ver qué tal"
-  },
-  "paco": {
-    "title": "html con tailwind",
-    "description": "CosasasW"
-  },
   "counter": {
     "title": "Contador",
     "increment": "Incrementar",
     "decrement": "Decrementar"
+  },
+  "login": {
+    "title": "Iniciar sesión",
+    "description": "Iniciar sesión"
+  },
+  "logout": {
+    "title": "Cerrar sesión",
+    "description": "Cerrar sesión"
+  },
+  "changeLanguage": {
+    "title": "Cambiar idioma",
+    "description": "Cambiar idioma"
   }
 }

@@ -4,6 +4,7 @@ import ChangeLanguage from '../common/ChangeLanguage.vue'
 import BurguerMenu from '../common/BurguerMenu.vue'
 import Aside from './Aside.vue'
 import Sidebar from './Sidebar.vue'
+import SocialMenu from '../common/SocialMenu.vue'
 </script>
 
 <template>
@@ -22,17 +23,10 @@ import Sidebar from './Sidebar.vue'
 
     <!-- Icons  -->
     <nav class="hidden md:flex space-x-4 text-sm">
-      <a href="#" class="hover:text-gray-600" aria-label="Facebook Icon">
-        <img src="@/assets/icons/facebook.svg" alt="Facebook icon" />
-      </a>
-      <a href="#" class="hover:text-gray-600" aria-label="Instagram Icon">
-        <img src="@/assets/icons/instagram.svg" alt="Instagram icon" />
-      </a>
+      <SocialMenu />
 
-      <!-- Login -->
       <Login />
 
-      <!-- Change language -->
       <ChangeLanguage />
     </nav>
 
@@ -41,5 +35,3 @@ import Sidebar from './Sidebar.vue'
     <Sidebar />
   </nav>
 </template>
-
-<style lang="scss" scoped></style>

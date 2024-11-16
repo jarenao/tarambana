@@ -27,10 +27,8 @@ const { t } = useI18n()
 const { isAuthenticated } = useAuth0()
 const route = useRoute()
 
-// Función para verificar si la ruta está activa
 const isPathActive = (path) => route.path === path
 
-// Menú reactivo
 const menuRoutes = ref([])
 
 // Filtrar las rutas por autenticación y visibilidad
