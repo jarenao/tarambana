@@ -6,27 +6,35 @@ import Private from '../views/Private.vue'
 
 import { authGuard } from '@auth0/auth0-vue'
 
-const routes = [
+export const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'home',
+    component: Home,
+    showInMenu: false,
+    meta: { icon: 'home', requiresAuth: false }
   },
   {
     path: '/about',
-    name: 'About',
-    component: About
+    name: 'about',
+    component: About,
+    showInMenu: true,
+    meta: { icon: 'about', requiresAuth: false }
   },
   {
     path: '/gallery',
-    name: 'Gallery',
-    component: Gallery
+    name: 'gallery',
+    component: Gallery,
+    showInMenu: true,
+    meta: { icon: 'gallery', requiresAuth: false }
   },
   {
     path: '/private',
-    name: 'Private',
+    name: 'private',
     component: Private,
-    beforeEnter: authGuard
+    beforeEnter: authGuard,
+    showInMenu: true,
+    meta: { icon: 'user-icon', requiresAuth: true }
   }
 ]
 
