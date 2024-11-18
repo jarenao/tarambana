@@ -1,9 +1,15 @@
 <template>
   <template v-for="link in socialLinks" :key="link.name">
-    <button @click.prevent="openSocialLink(link)" class="" :title="`Abrir ${link.name}`">
+    <a
+      href="#"
+      @click.prevent="openSocialLink(link)"
+      :title="`Abrir ${link.name}`"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img :src="`/src/assets/icons/${link.icon}.svg`" :alt="`Link ${link.name}`" />
       <span class="sr-only">{{ link.name }}</span>
-    </button>
+    </a>
   </template>
 </template>
 
@@ -15,13 +21,10 @@ function openSocialLink(link) {
     window.location.href = link.appUrl
 
     setTimeout(() => {
-      window.location.href = link.url
+      window.open(link.url, '_blank')
     }, 500)
   } else {
-    // Si no hay appUrl, usa directamente la URL estándar
-    window.location.href = link.url
+    window.open(link.url, '_blank')
   }
 }
 </script>
-
-<style lang="scss" scoped></style>
