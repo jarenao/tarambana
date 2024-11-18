@@ -7,17 +7,25 @@
       class="mr-5"
     />
     <img v-else src="@/assets/icons/language-en.svg" alt="language-en icon" class="mr-5" />
-    <span class="md:hidden">{{ t('changeLanguage.title') }}</span>
+    <span v-if="showText" class="">{{ t('changeLanguage.title') }}</span>
     <span class="sr-only">{{ t('changeLanguage.title') }}</span>
   </button>
 </template>
 
 <script setup>
+import { defineProps } from 'vue'
 import { useLanguageStore } from '@/store/useLanguageStore'
 import { useI18n } from 'vue-i18n'
 
 const { t, locale } = useI18n()
 const languageStore = useLanguageStore()
+
+const props = defineProps({
+  showText: {
+    type: Boolean,
+    default: true
+  }
+})
 
 // Change language
 const toggleLanguage = () => {

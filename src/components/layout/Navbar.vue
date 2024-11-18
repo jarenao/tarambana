@@ -25,9 +25,9 @@ import SocialMenu from '../common/SocialMenu.vue'
     <nav class="hidden md:flex space-x-4 text-sm">
       <SocialMenu />
 
-      <Login />
+      <Login :showText="false" />
 
-      <ChangeLanguage />
+      <ChangeLanguage :showText="false" />
     </nav>
 
     <!-- Menu Mobile -->
