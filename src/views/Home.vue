@@ -1,6 +1,8 @@
 <script setup>
 import HeaderNav from '../components/layout/HeaderNav.vue'
 import Footer from '../components/layout/Footer.vue'
+import GalleryMain from '../components/layout/GalleryMain.vue'
+import GalleryHome from '../components/layout/GalleryHome.vue'
 </script>
 
 <template>
@@ -44,22 +46,8 @@ import Footer from '../components/layout/Footer.vue'
       </section>
 
       <!-- Galería -->
-      <aside
-        id="gallery"
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center py-20"
-      >
-        <a href="/images/gallery-images/gallery-image-1.jpg" class="relative group">
-          <img
-            src="/images/gallery-images/gallery-image-1.jpg"
-            alt="Landing Page"
-            class="w-full h-auto"
-          />
-          <div
-            class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity"
-          ></div>
-        </a>
-        <!-- Repetir para cada imagen de galería -->
-      </aside>
+      <!-- <GalleryMain /> -->
+      <GalleryHome />
 
       <!-- Sección de servicios -->
       <div id="services" class="scrollto py-20">
