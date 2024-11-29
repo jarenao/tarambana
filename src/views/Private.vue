@@ -9,8 +9,6 @@ const { t } = useI18n()
 
 <template>
   <Navbar></Navbar>
-  <div>
-    <h1>ESTO ES UNA AREA PRIVADA</h1>
-  </div>
+  <h1>Área privada</h1>
   <Footer></Footer>
 </template>
