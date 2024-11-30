@@ -17,6 +17,7 @@ const cld = new Cloudinary({
     cloudName: import.meta.env.VITE_CLOUD_NAME
   }
 })
+
 const myImage = cld
   .image(props.publicId)
   .resize(thumbnail().width(300).height(300).gravity(autoGravity()))
