@@ -1,7 +1,6 @@
 <script setup>
 import HeaderNav from '../components/layout/HeaderNav.vue'
 import Footer from '../components/layout/Footer.vue'
-import GalleryMain from '../components/layout/GalleryMain.vue'
 import GalleryHome from '../components/layout/GalleryHome.vue'
 </script>
 
@@ -46,7 +45,6 @@ import GalleryHome from '../components/layout/GalleryHome.vue'
       </section>
 
       <!-- Galería -->
-      <!-- <GalleryMain /> -->
       <GalleryHome />
 
       <!-- Sección de servicios -->

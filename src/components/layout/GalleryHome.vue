@@ -1,21 +1,12 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import CldImage from '../common/CldImage.vue'
+import { onMounted } from 'vue'
+import { useCloudinary } from '../../composables/useCloudinary'
+import CldImage from '../../components/common/CldImage.vue'
 
-const photos = ref([])
-const loading = ref(true)
-
-const getData = async (tag) => {
-  const response = await fetch(
-    `https://res.cloudinary.com/${import.meta.env.VITE_CLOUD_NAME}/image/list/${tag}.json`
-  )
-  const data = await response.json()
-  photos.value = data.resources
-  loading.value = false
-}
+const { photos, loading, getPhotos } = useCloudinary()
 
 onMounted(() => {
-  getData('cat')
+  getPhotos()
 })
 </script>
 
@@ -31,10 +22,13 @@ onMounted(() => {
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center py-20"
       >
         <a v-for="(photo, idx) in photos" :key="idx" :href="_Test" class="relative group">
+          <!-- <h1>{{ photo }}</h1> -->
           <CldImage :publicId="photo.public_id" class="w-full h-auto" />
           <div
-            class="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity"
-          ></div>
+            class="flex items-center justify-center p-6 absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity"
+          >
+            <p class="text-white">{{ photo.public_id }}</p>
+          </div>
         </a>
       </aside>
     </template>
