@@ -22,16 +22,34 @@ const uploadPreset = import.meta.env.VITE_UPLOAD_PRESET
 // Arreglo reactivo para almacenar todas las imágenes cargadas
 const uploadedImages = ref([])
 
+// Tags personalizadas
+const tags = ['all', 'tattooing', 'tools', 'cat', 'designs', 'test']
+const getMyTags = (cb, prefix) => cb(prefix ? tags.filter((t) => !t.indexOf(prefix)) : tags)
+
 // Crear el widget de carga
 const widget = cloudinary.createUploadWidget(
   {
     cloudName,
-    uploadPreset
+    uploadPreset,
     // Opciones adicionales
     // cropping: true,
-    // sources: ['local', 'url'],
-    // maxImageFileSize: 2000000, // Límite de tamaño de archivo
     // clientAllowedFormats: ['images'], // Solo imágenes
+    sources: ['local', 'url'],
+    maxImageFileSize: 2000000,
+    showAdvancedOptions: true,
+    getTags: getMyTags
+    // language: 'en',
+    // text: {
+    //   en: {
+    //     queue: {
+    //       title: 'Files to upload',
+    //       title_uploading_with_counter: 'Uploading {{num}} files'
+    //     },
+    //     crop: {
+    //       title: 'Crop your image'
+    //     }
+    //   }
+    // }
   },
   (error, result) => {
     if (!error && result && result.event === 'success') {
