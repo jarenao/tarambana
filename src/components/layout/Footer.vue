@@ -1,7 +1,7 @@
 <template>
   <!-- component -->
   <div class="w-full min-h-screen flex items-center justify-center bg-black">
-    <div class="pt-16 w-full px-4 text-white flex flex-col">
+    <div class="pt-16 container mx-auto px-4 text-white flex flex-col">
       <div class="w-full text-7xl font-bold">
         <h1 class="w-full md:w-2/3">How can we help you. get in touch</h1>
       </div>

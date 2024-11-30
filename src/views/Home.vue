@@ -2,10 +2,11 @@
 import HeaderNav from '../components/layout/HeaderNav.vue'
 import Footer from '../components/layout/Footer.vue'
 import GalleryHome from '../components/layout/GalleryHome.vue'
+import Loader from '../components/ui/Loader.vue'
 </script>
 
 <template>
-  <div id="wrapper" class="relative">
+  <div id="wrapper" class="relative container mx-auto">
     <!-- Header -->
     <HeaderNav></HeaderNav>
 
@@ -124,8 +125,7 @@ import GalleryHome from '../components/layout/GalleryHome.vue'
         </div>
       </section>
     </main>
-
-    <!-- Footer -->
-    <Footer></Footer>
   </div>
+  <!-- Footer -->
+  <Footer></Footer>
 </template>

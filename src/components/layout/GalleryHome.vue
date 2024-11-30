@@ -2,6 +2,7 @@
 import { onMounted } from 'vue'
 import { useCloudinary } from '../../composables/useCloudinary'
 import CldImage from '../../components/common/CldImage.vue'
+import Loader from '../ui/Loader.vue'
 
 const { photos, loading, getPhotos } = useCloudinary()
 
@@ -11,15 +12,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="m-2 space-y-4">
+  <div class="space-y-4">
     <template v-if="loading">
-      <p class="font-bold">Loading gallery</p>
+      <Loader />
     </template>
 
     <template v-else-if="photos.length !== 0">
       <aside
         id="gallery"
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center py-20"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center py-20"
       >
         <a v-for="(photo, idx) in photos" :key="idx" :href="_Test" class="relative group">
           <!-- <h1>{{ photo }}</h1> -->
