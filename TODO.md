@@ -2,10 +2,10 @@
 
 ### UI
 
-- Paleta de colores todo centralizado por themas o en archivo de configuración.
-- Cambiar colores del html por primary, secondary, etc.
-- Crear estructura
-- Crear componentes
+- Paleta de colores todo centralizado por themas o en archivo de configuración. ✔️
+- Cambiar colores del html por primary, secondary, etc. ✔️
+- Crear estructura ✔️
+- Crear componentes ✔️
 
 ### TESTS
 
